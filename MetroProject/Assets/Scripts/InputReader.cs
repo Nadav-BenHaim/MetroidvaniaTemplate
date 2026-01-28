@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "Metro Input Reader", menuName = "Input System/Metro Input Reader")]
 public class InputReader : ScriptableObject, InputSystem_Actions.IMetroPlayerActions

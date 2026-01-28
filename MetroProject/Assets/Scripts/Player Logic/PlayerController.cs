@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     public PlayerState JumpState;
     public PlayerState FallState;
 
+    [Header("Configuration")]
+    public PlayerData Data; // Drag your Data Asset here
+
+    // Runtime variables (Things that change during gameplay)
+    public int JumpCount { get; set; }
+
     private void Awake()
     {
         // Initialize States
@@ -51,5 +57,14 @@ public class PlayerController : MonoBehaviour
 
         CurrentState = newState;
         CurrentState.Enter();
+    }
+
+    // A helper method to reset mechanics when touching ground // consider moving this 
+    public void CheckForGroundReset()
+    {
+        if (Physics.IsGrounded)
+        {
+            JumpCount = 0; // Reset jumps when we touch grass
+        }
     }
 }
