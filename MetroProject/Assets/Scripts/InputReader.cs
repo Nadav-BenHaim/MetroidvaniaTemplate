@@ -27,6 +27,7 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IMetroPlayerAct
     {
         input?.MetroPlayer.Disable();
     }
+
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
